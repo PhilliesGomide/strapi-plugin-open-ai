@@ -131,7 +131,7 @@ const RightLinksCompo = () => {
       completionAPI
         .create({ model, messages, temperature, maxTokens })
         .then((data) => {
-          setCompletion(data?.choices[0]?.text.trim());
+          setCompletion(data?.choices[0]?.message?.content.trim());          
           setFinishReason(data?.choices[0]?.finish_reason);
         })
         .finally(() => {
